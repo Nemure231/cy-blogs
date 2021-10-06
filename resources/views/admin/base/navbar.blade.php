@@ -22,7 +22,8 @@
                 <li><a class="dropdown-item" href="{{url('/')}}">Beranda</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                    <form action="{{url('logout')}}">
+                    <form method="post" action="{{url('logout')}}">
+                        @csrf
                         <button type="submit" class="dropdown-item">Logout</button>
                     </form>
                 </li>

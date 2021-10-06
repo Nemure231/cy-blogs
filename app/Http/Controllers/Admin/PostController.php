@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Kategori;
 
 class PostController extends Controller
 {
@@ -14,7 +16,17 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin/post/post');
+        $m = Post::select('id', 'judul', 'created_at', 'updated_at')->with('kategori')
+            ->get();
+
+        // $d = $user = Post::select('id', 'judul', 'created_at', 'updated_at')
+        //     ->with('kategori', fn ($query) =>
+        //     $query->select('id', 'nama'))->get();
+
+        // dd($users);
+        return view('admin/post/post',[
+            'post' => Post::with('kategori')->get(),
+        ]);
     }
 
     /**
