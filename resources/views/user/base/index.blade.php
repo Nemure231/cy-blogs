@@ -14,14 +14,14 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('user/css/custom.css')}}" rel="stylesheet">
+  <link href="{{asset('user/base/css/custom.css')}}" rel="stylesheet">
 
   <meta name="theme-color" content="#7952b3">
 
   <!-- Custom styles for this template -->
   <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{{asset('user/css/blog.css')}}" rel="stylesheet">
+  <link href="{{asset('user/base/css/blog.css')}}" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">

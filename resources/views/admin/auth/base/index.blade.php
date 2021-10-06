@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>@yield('judul')</title>
-    <link href="{{asset('admin/css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
 </head>
 
 <body class="bg-primary">
@@ -25,7 +25,7 @@
 
 
     <script src="{{asset('base/bootstrap/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('admin/js/scripts.js')}}"></script>
+    <script src="{{asset('admin/base/js/scripts.js')}}"></script>
 
     @yield('js')
 </body>
