@@ -1,4 +1,4 @@
-@extends('user/base/base')
+@extends('user/base/index')
 
 @section('judul', 'Cy-Blog - Kategori')
 

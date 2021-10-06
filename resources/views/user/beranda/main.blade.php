@@ -1,4 +1,4 @@
-@extends('user/base/base')
+@extends('user/base/index')
 
 @section('judul', 'Cy-Blog - Beranda')
 
@@ -113,6 +113,7 @@
 
 
 </main>
+@section('js')
 
 <script>
 
@@ -128,15 +129,16 @@
     var toastTrigger = document.getElementById('liveToastBtn')
     var toastLiveExample = document.getElementById('liveToast')
     if (toastLiveExample) {
-      // toastTrigger.addEventListener('click', function () {
+      
       var toast = new bootstrap.Toast(toastLiveExample)
 
       toast.show()
-      // })
+      
     }
   });
 
 
-
 </script>
+    
+@endsection
 @endsection

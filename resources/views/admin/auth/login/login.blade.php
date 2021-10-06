@@ -1,4 +1,4 @@
-@extends('admin/auth/base/base')
+@extends('admin/auth/base/index')
 
 @section('judul', 'Cy-Blog - Login')
 
