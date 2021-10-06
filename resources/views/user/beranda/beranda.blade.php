@@ -2,13 +2,25 @@
 
 @section('judul', 'Cy-Blog - Beranda')
 
+@section('css')
+ <!-- Bootstrap core CSS -->
+ <link href="{{asset('base/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="{{asset('user/base/css/custom.css')}}" rel="stylesheet">
+
+ <!-- Custom styles for this template -->
+ <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="{{asset('user/base/css/blog.css')}}" rel="stylesheet">
+    
+@endsection
 
 
-@include('user/base/header')
 
 
 
 @section('main')
+@include('user/base/header')
 <main class="container mb-3 flex-shrink-0">
 
   <div class="row mb-2">
@@ -53,25 +65,21 @@
 
   @if($post->count())
 
-  @if(request('cari'))
-  <h2 class="text-center mt-5">Pencarian: {{request('cari')}}</h2>
+    @if(request('cari'))
+    <h2 class="text-center mt-5">Pencarian: {{request('cari')}}</h2>
 
-  @endif
+    @endif
 
-  @if(request('kategori'))
-  <h2 class="text-center mt-5">Kategori: {{request('kategori')}}</h2>
+    @if(request('kategori'))
+    <h2 class="text-center mt-5">Kategori: {{request('kategori')}}</h2>
 
-  @endif
+    @endif
+    
   @else
 
-  <h2 class="text-center mt-5">Tidak ada post yang anda cari</h2>
+    <h2 class="text-center mt-5">Tidak ada post yang anda cari</h2>
 
   @endif
-
-
-
-
-
 
   <div class="row g-5 mb-3">
     <div class="col-lg-12">
@@ -113,32 +121,12 @@
 
 
 </main>
+
 @section('js')
 
-<script>
-
-  function ready(fn) {
-    if (document.readyState != 'loading') {
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
-
-  ready(function () {
-    var toastTrigger = document.getElementById('liveToastBtn')
-    var toastLiveExample = document.getElementById('liveToast')
-    if (toastLiveExample) {
-      
-      var toast = new bootstrap.Toast(toastLiveExample)
-
-      toast.show()
-      
-    }
-  });
-
-
-</script>
+<script type="application/javascript" src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
+<script type="application/javascript" src="{{asset('user/beranda/beranda.js')}}"></script>
     
 @endsection
+
 @endsection

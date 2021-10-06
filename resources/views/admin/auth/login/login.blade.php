@@ -2,6 +2,10 @@
 
 @section('judul', 'Cy-Blog - Login')
 
+@section('css')
+<link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
+@endsection
+
 @section('main')
 
 <main>
@@ -75,6 +79,10 @@
 </main>
 
 @section('js')
+<script src="{{asset('base/bootstrap/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('admin/base/js/scripts.js')}}"></script>
+
+
 <script type="application/javascript" src="{{asset('admin/login/login.js')}}"></script>
 @endsection
 

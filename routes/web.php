@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\BerandaController;
-use App\Http\Controllers\User\KategoriController;
+
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\RegistrasiController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\KategoriController;
 
 
 /*
@@ -31,3 +33,7 @@ Route::post('/registrasi', [RegistrasiController::class, 'store']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth'); 
+
+Route::get('/kategori', [KategoriController::class, 'index'])->middleware('auth'); 
+
+Route::get('/post', [PostController::class, 'index'])->middleware('auth'); 

@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
-        <link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
+        <title>@yield('judul')</title>
+        @yield('css')
+        
+      
     </head>
     <body class="sb-nav-fixed">
         @include('admin/base/navbar')
@@ -22,11 +24,8 @@
                 @include('admin/base/footer')
             </div>
         </div>
-        <script src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
-        <script src="{{asset('base/fontawesome/all.min.js');}}"></script>
-
-        <script src="{{asset('admin/base/js/scripts.js')}}"></script>
-        
+       
+        @yield('js')
         
     </body>
 </html>

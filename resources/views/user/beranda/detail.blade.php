@@ -2,6 +2,21 @@
 
 @section('judul', 'Cy-Blog - Post')
 
+@section('css')
+ <!-- Bootstrap core CSS -->
+ <link href="{{asset('base/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="{{asset('user/base/css/custom.css')}}" rel="stylesheet">
+
+ <!-- Custom styles for this template -->
+ <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="{{asset('user/base/css/blog.css')}}" rel="stylesheet">
+@endsection
+
+
+
+
 @section('main')
 <main class="container mb-3">
 
@@ -33,4 +48,10 @@
   </div>
 
 </main>
+
+  @section('js')
+
+  <script type="application/javascript" src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
+      
+  @endsection
 @endsection

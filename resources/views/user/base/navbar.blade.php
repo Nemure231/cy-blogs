@@ -9,7 +9,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Kategori</a>
+                    <a class="nav-link dropdown-toggle {{Request::has('kategori') ? 'active' : ''}}" href="#" data-bs-toggle="dropdown">Kategori</a>
                     <div class="dropdown-menu dropdown-large">
                         <div class="row g-3 text-center">
                             <div class="col-12">
@@ -53,7 +53,7 @@
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link disabled" href="{{url('dashboard')}}" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
 
@@ -71,7 +71,7 @@
                     <li><a class="dropdown-item" href="{{url('/dashboard')}}">Dashboard</a></li>
                     <li>
                       <hr class="dropdown-divider">
-                      <form method="post" action="{{url('/logout')}}">
+                      <form method="post" action="{{url('logout')}}">
                         @csrf
                         <button type="submit" class="dropdown-item" href="#">Logout</button>
                       </form>

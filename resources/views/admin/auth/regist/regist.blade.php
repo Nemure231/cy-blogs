@@ -1,6 +1,10 @@
 @extends('admin/auth/base/index')
 @section('judul', 'Cy-Blog - Registrasi')
 
+@section('css')
+<link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
+@endsection
+
 @section('main')
 <main>
     <div class="container">
@@ -83,6 +87,11 @@
     </div>
 </main>
 @section('js')
+
+<script src="{{asset('base/bootstrap/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('admin/base/js/scripts.js')}}"></script>
+
+
 <script type="application/javascript" src="{{asset('admin/regist/regist.js')}}"></script>
 
 
