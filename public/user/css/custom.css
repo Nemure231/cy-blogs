@@ -1,0 +1,33 @@
+/* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .sticky-footer {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+  }
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+
+.dropdown-large{ padding:1rem; }
+
+@media all and (min-width: 792px) {
+  .dropdown-large{min-width: 300px;}
+}	
+
+
