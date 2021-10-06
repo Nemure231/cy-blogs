@@ -11,7 +11,7 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        return view('user/beranda/main',[
+        return view('user/beranda/beranda',[
             //filter di sini pake query scope yaitu query terpisah
             //yang dapat digunakan kapan saja, atau sering
             //dan berada di dalam modal post
@@ -19,7 +19,6 @@ class BerandaController extends Controller
             'kategori' => Kategori::all()
         ]);
     }
-
     
     public function show(Post $post){
         return view('user/beranda/detail',[

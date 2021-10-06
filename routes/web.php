@@ -22,9 +22,6 @@ use App\Http\Controllers\Admin\DashboardController;
 Route::get('/', [BerandaController::class, 'index']);
 Route::get('/post/{post:slug}', [BerandaController::class, 'show']);
 
-
-Route::get('/kategori', [KategoriController::class, 'index']);
-
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
