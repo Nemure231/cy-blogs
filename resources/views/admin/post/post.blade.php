@@ -31,28 +31,25 @@
             <div class="col-lg-12">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        DataTable Example
+                        <div class="d-flex justify-content-between">
+                            <i class="fas fa-table me-1"></i>
+                            <a href="{{url('post/tambah')}}}" class="btn btn-primary">Tambah</a>
+                        </div>
+
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
+                        <table id="datatablesSimple" style="min-height: 200px;">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Judul</th>
                                     <th>Kategori</th>
+                                    <th>Status</th>
                                     <th>Opsi</th>
                                    
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </tfoot>
+                            
                             <tbody>
                                 @foreach ($post as $p)
                                 <tr>
@@ -60,13 +57,25 @@
                                     <td>{{$p['judul']}}</td>
                                     <td>{{$p['kategori']['nama']}}</td>
                                     <td>
+                                        @if ($p['status'] == 1)
+
+                                        <h4><span class="badge bg-success">Aktif</span></h4>
+                                            
+                                        @endif
+                                        @if ($p['status'] == 2)
+
+                                        <h4><span class="badge bg-danger">Tidak aktif</span></h4>
+                                            
+                                        @endif
+                                    </td>
+                                    <td>
                                         <div class="btn-group dropdown">
                                             <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Opsi
                                             
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{url('post'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
+                                                <li><a class="dropdown-item" href="{{url('pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Ubah</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Hapus</a></li>
                                               </ul>

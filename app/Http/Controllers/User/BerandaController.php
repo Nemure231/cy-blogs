@@ -15,7 +15,9 @@ class BerandaController extends Controller
             //filter di sini pake query scope yaitu query terpisah
             //yang dapat digunakan kapan saja, atau sering
             //dan berada di dalam modal post
-            'post' => Post::with('kategori')->latest()->filter(request(['cari', 'kategori']))->paginate(9)->withQueryString(),
+            'post' => Post::with('kategori')->where('status', 1)
+                    ->latest()->filter(request(['cari', 'kategori']))
+                    ->paginate(9)->withQueryString(),
             'kategori' => Kategori::all()
         ]);
     }

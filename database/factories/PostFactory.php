@@ -26,6 +26,7 @@ class PostFactory extends Factory
             'judul' => $this->faker->sentence(mt_rand(2,3)),
             'isi' => $this->faker->paragraph(mt_rand(5,10)),
             'gambar' => 'https://source.unsplash.com/300x200/?water',
+            'status' => 1,
             'slug' => $this->faker->slug()
         ];
     }
