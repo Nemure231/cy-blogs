@@ -8,13 +8,14 @@
   }
 
   ready(function () {
-    var toastTrigger = document.getElementById('liveToastBtn')
-    var toastLiveExample = document.getElementById('liveToast')
-    if (toastLiveExample) {
-      
-      var toast = new bootstrap.Toast(toastLiveExample)
+    const sukses = document.getElementById('sukses').dataset.flashdata;
+    if (sukses) {
 
-      toast.show()
-      
+        iziToast.success({
+            title: 'Sukses!',
+            message: '' + sukses,
+            position: 'topRight',
+            toastOnce: true
+        });
     }
   });

@@ -102,10 +102,10 @@
 </main>
 
 @section('js')
-<script src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
-<script src="{{asset('base/fontawesome/all.min.js');}}"></script>
-<script src="{{asset('base/izitoast/script.min.js');}}"></script>
-<script src="{{asset('admin/base/js/scripts.js')}}"></script>
+<script type="application/javascript" src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
+<script type="application/javascript" src="{{asset('base/fontawesome/all.min.js');}}"></script>
+<script type="application/javascript" src="{{asset('base/izitoast/script.min.js');}}"></script>
+<script type="application/javascript" src="{{asset('admin/base/js/scripts.js')}}"></script>
 
 <script type="application/javascript" src="{{asset('base/datatables/simple-datatables.js')}}"> </script>
 <script type="application/javascript" src="{{asset('admin/post/custom-post.js')}}"> </script>

@@ -5,6 +5,11 @@
 @section('css')
  <!-- Bootstrap core CSS -->
  <link href="{{asset('base/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+
+ {{-- css dari luar --}}
+ <link href="{{asset('base/izitoast/style.min.css')}}" rel="stylesheet" />
+
+
  <!-- Custom styles for this template -->
  <link href="{{asset('user/base/css/custom.css')}}" rel="stylesheet">
 
@@ -21,6 +26,7 @@
 
 @section('main')
 @include('user/base/header')
+<div id="sukses" data-flashdata="@if(session()->has('sukses')){{session('sukses')}}@endif"></div>
 <main class="container mb-3 flex-shrink-0">
 
   <div class="row mb-2">
@@ -123,8 +129,11 @@
 </main>
 
 @section('js')
-
+{{-- js dari luar --}}
 <script type="application/javascript" src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
+<script type="application/javascript" src="{{asset('base/izitoast/script.min.js');}}"></script>
+
+{{-- custom js --}}
 <script type="application/javascript" src="{{asset('user/beranda/beranda.js')}}"></script>
     
 @endsection

@@ -15,7 +15,7 @@ ready(function () {
     if (sukses) {
 
         iziToast.success({
-            title: 'Berhasil!',
+            title: 'Sukses!',
             message: '' + sukses,
             position: 'topRight',
             toastOnce: true
