@@ -5,6 +5,7 @@
 @section('css')
 
 <link href="{{asset('base/datatables/style.css')}}" rel="stylesheet" />
+<link href="{{asset('base/izitoast/style.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
     
 @endsection
@@ -14,6 +15,9 @@
 
 <main>
     <div class="container-fluid px-4">
+        <div id="sukses" data-flashdata="@if(session()->has('sukses')){{session('sukses')}}@endif"></div>
+
+
         <h1 class="mt-4">Post</h1>
 
         <div class="card mb-4">
@@ -25,15 +29,13 @@
             {{-- </div> --}}
         </div>
 
-
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="card mb-4">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <i class="fas fa-table me-1"></i>
-                            <a href="{{url('post/tambah')}}}" class="btn btn-primary">Tambah</a>
+                            <a href="{{url('posting/tambah')}}" class="btn btn-primary">Tambah</a>
                         </div>
 
                     </div>
@@ -75,7 +77,7 @@
                                             
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{url('pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
+                                                <li><a class="dropdown-item" href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Ubah</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Hapus</a></li>
                                               </ul>
@@ -102,10 +104,11 @@
 @section('js')
 <script src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
 <script src="{{asset('base/fontawesome/all.min.js');}}"></script>
+<script src="{{asset('base/izitoast/script.min.js');}}"></script>
 <script src="{{asset('admin/base/js/scripts.js')}}"></script>
 
 <script type="application/javascript" src="{{asset('base/datatables/simple-datatables.js')}}"> </script>
-<script type="application/javascript" src="{{asset('admin/post/post-simple-datatables.js')}}"> </script>
+<script type="application/javascript" src="{{asset('admin/post/custom-post.js')}}"> </script>
 
     
 @endsection

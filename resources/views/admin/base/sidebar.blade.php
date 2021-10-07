@@ -8,14 +8,14 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Tulisan</div>
-                <a class="nav-link collapsed  {{Request::is(['post', 'kategori']) ? 'active' : ''}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link collapsed  {{Request::is(['posting', 'kategori']) ? 'active' : ''}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Posting
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse  {{Request::is(['post', 'kategori']) ? 'show' : ''}}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse  {{Request::is(['posting', 'kategori']) ? 'show' : ''}}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link {{Request::is('post') ? 'active' : ''}}" href="{{url('post')}}">Post</a>
+                        <a class="nav-link {{Request::is('posting') ? 'active' : ''}}" href="{{url('posting')}}">Post</a>
                         <a class="nav-link {{Request::is('kategori') ? 'active' : ''}}" href="{{url('kategori')}}">Kategori</a>
                     </nav>
                 </div>

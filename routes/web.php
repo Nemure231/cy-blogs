@@ -36,5 +36,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/kategori', [KategoriController::class, 'index'])->middleware('auth'); 
 
-Route::get('/post', [PostController::class, 'index'])->middleware('auth'); 
-Route::get('/pratinjau/{post:slug}', [PostController::class, 'show'])->middleware('auth'); 
+Route::get('/posting', [PostController::class, 'index'])->middleware('auth'); 
+Route::get('/posting/pratinjau/{post:slug}', [PostController::class, 'show'])->middleware('auth');
+Route::get('/posting/tambah', [PostController::class, 'create']);
+Route::post('/posting', [PostController::class, 'store']);

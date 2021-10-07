@@ -19,7 +19,7 @@
             {{-- <div class="card-body"> --}}
                 <ol class="breadcrumb mt-3">
                     <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{url('post')}}">Post</a></li>
+                    <li class="breadcrumb-item"><a href="{{url('posting')}}">Post</a></li>
                     <li class="breadcrumb-item active">{{$detail['judul']}}</li>
                 </ol>
             {{-- </div> --}}

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Kategori;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -34,9 +35,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('admin/post/tambah',[
+            'kategori' => Kategori::all()
+        ]);
     }
 
     /**
@@ -47,7 +50,30 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori_id' => 'required',
+            'judul' => ['required', 'string'],
+            'isi' => ['required', 'string'],
+        ],[
+            'kategori_id.required' => 'Harus diisi!',
+            'judul.required' => 'Harus diisi!',
+            'judul.string' => 'Entahlah!',
+            'isi.required' => 'Harus diisi!',
+            'isi.string' => 'Entahlah!',
+        ]);
+
+        ///cara pertama buat input ke database
+        $post = new Post;
+        $post->kategori_id = $request->kategori_id;
+        $post->judul = $request->judul;
+        $post->isi = e($request->isi);
+        $post->gambar = 'mmmmm';
+        $post->slug =  Str::slug($request->judul, '-');
+        $post->status =  $request->status ?? 1;
+        $post->save();
+        return redirect('/posting')->with('sukses', 'Post berhasil ditambahkan');
+
+
     }
 
     /**
