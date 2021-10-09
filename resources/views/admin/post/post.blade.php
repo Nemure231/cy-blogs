@@ -78,7 +78,7 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
-                                                <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Ubah</a></li>
+                                                <li><a class="dropdown-item" href="{{url('posting'). '/'. $p['id']. '/edit' }}"><i class="fas fa-edit"></i> Ubah</a></li>
                                                 <li>
                                                     <a class="dropdown-item tombol-hapus" href="javascript:void(0)"
                                                     data-id="{{$p['id']}}"

@@ -40,4 +40,6 @@ Route::get('/posting', [PostController::class, 'index'])->middleware('auth');
 Route::get('/posting/pratinjau/{post:slug}', [PostController::class, 'show'])->middleware('auth');
 Route::get('/posting/tambah', [PostController::class, 'create']);
 Route::post('/posting', [PostController::class, 'store']);
+Route::get('/posting/{post:id}/edit', [PostController::class, 'edit']);
+Route::put('/posting/{post:id}', [PostController::class, 'update']);
 Route::delete('/posting', [PostController::class, 'destroy']);

@@ -52,14 +52,13 @@ class PostController extends Controller
     {
         $request->validate([
             'kategori_id' => 'required',
-            'judul' => ['required', 'string'],
-            'isi' => ['required', 'string'],
+            'judul' => ['required', 'unique'],
+            'isi' => ['required'],
         ],[
             'kategori_id.required' => 'Harus diisi!',
             'judul.required' => 'Harus diisi!',
-            'judul.string' => 'Entahlah!',
+            'judul.unique' => 'Sudah pernah ada!',
             'isi.required' => 'Harus diisi!',
-            'isi.string' => 'Entahlah!',
         ]);
 
         ///cara pertama buat input ke database
@@ -96,9 +95,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin/post/ubah',[
+            'post' => $post,
+            'kategori' => Kategori::all()
+        ]);
+
     }
 
     /**
@@ -110,7 +113,31 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kategori_id' => 'required',
+            'judul' => ['required', 'string', 'unique:post,judul,'.$id.',id'],
+            'isi' => ['required'],
+        ],[
+            'kategori_id.required' => 'Harus diisi!',
+            'judul.required' => 'Harus diisi!',
+            'judul.unique' => 'Sudah pernah ada!',
+            'isi.required' => 'Harus diisi!',
+        ]);
+
+        ///cara pertama buat input ke database
+
+        $decode_isi = $request->isi;
+
+        $post = Post::find($id);
+        $post->kategori_id = $request->kategori_id;
+        $post->judul = $request->judul;
+        $post->isi = $decode_isi;
+        $post->gambar = 'mmmmm';
+        $post->slug =  Str::slug($request->judul, '-');
+        $post->status =  $request->status ?? 1;
+        $post->save();
+        
+        return redirect('/posting')->with('sukses', 'Post berhasil diubah!');
     }
 
     /**
