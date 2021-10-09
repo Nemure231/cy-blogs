@@ -15,8 +15,11 @@ ready(function () {
      e.preventDefault();
     });
 
+    FilePond.registerPlugin(FilePondPluginImagePreview);
+    const pond = document.body;
 
-
-
+    FilePond.parse(pond, {
+    
+    });
 });
 

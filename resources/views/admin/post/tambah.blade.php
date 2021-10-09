@@ -9,6 +9,8 @@
 
 {{-- Css dari luar --}}
 <link href="{{asset('base/trixeditor/trix.css')}}" rel="stylesheet" />
+<link href="{{asset('base/filepond/style.css')}}" rel="stylesheet" />
+<link href="{{asset('base/filepond/preview.css')}}" rel="stylesheet" />
 
 {{-- Custom css --}}
 <link href="{{asset('admin/post/custom-tambah.css')}}" rel="stylesheet" />
@@ -42,11 +44,16 @@
                         <form method="post" action="{{url('posting')}}">
                             @csrf
                             <div class="row">
-                                {{-- <div class="col-lg-3">
-                                    <div class="row">
-                                        upload foto
-                                    </div>
-                                </div> --}}
+                                <div class="col-lg-12">
+                                    <label  class="form-label">Gambar</label>
+                                    <input type="file" id="gambar"
+                                    class="filepond form-control"
+                                    name="gambar" 
+                                    {{-- data-allow-reorder="true"
+                                    data-max-file-size="3MB"
+                                    data-max-files="3" --}}
+                                    >
+                                </div>
                                 <div class="col-lg-4">
                                     <div class="row">
                                         <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
@@ -133,7 +140,8 @@
 <script src="{{asset('base/trixeditor/trix.js')}}"></script>
 <script src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>
 <script src="{{asset('base/fontawesome/all.min.js');}}"></script>
-
+<script src="{{asset('base/filepond/preview.js');}}"></script>
+<script src="{{asset('base/filepond/script.js');}}"></script>
 {{-- JS bawaan style admin --}}
 <script src="{{asset('admin/base/js/scripts.js')}}"></script>
 
