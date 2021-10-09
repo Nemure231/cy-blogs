@@ -22,11 +22,21 @@ ready(function () {
         });
     }
 
-
     const datatablesSimple = document.getElementById('datatablesSimple');
     if (datatablesSimple) {
         new simpleDatatables.DataTable(datatablesSimple);
     }
+
+
+    /////////////////////Modal Hapus/////////////////////////////
+
+    var tombolHapus = document.getElementsByClassName('tombol-hapus');
+    Array.prototype.forEach.call(tombolHapus, function (element) {
+        element.addEventListener('click', function () {
+            new bootstrap.Modal(document.getElementById('modal-hapus')).show();
+            document.getElementById('id-hapus').value = element.dataset.id;
+        });
+    });
 
 
 

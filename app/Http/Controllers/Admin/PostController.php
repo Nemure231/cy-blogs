@@ -26,7 +26,7 @@ class PostController extends Controller
 
         // dd($users);
         return view('admin/post/post',[
-            'post' => Post::with('kategori')->get(),
+            'post' => Post::with('kategori')->orderByDesc('id')->get(),
         ]);
     }
 
@@ -71,7 +71,7 @@ class PostController extends Controller
         $post->slug =  Str::slug($request->judul, '-');
         $post->status =  $request->status ?? 1;
         $post->save();
-        return redirect('/posting')->with('sukses', 'Post berhasil ditambahkan');
+        return redirect('/posting')->with('sukses', 'Post berhasil ditambahkan!');
 
 
     }
@@ -119,8 +119,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Post::destroy($request->input('id-hapus'));
+        return redirect('/posting')->with('sukses', 'Post berhasil dihapus!');
+        
     }
 }

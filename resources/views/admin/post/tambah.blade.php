@@ -51,7 +51,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
                                             <label  class="form-label">Judul</label>
-                                            <input name="judul" value="{{old('judul')}}" type="text" class="form-control @error('judul')  is-invalid @enderror" autofocus/>
+                                            <input name="judul" value="{{old('judul')}}" type="text" class="form-control @error('judul')  is-invalid @enderror" autofocus>
                                             @error('judul')
                                             <div class="invalid-feedback">
                                                 {{$message}}
@@ -95,9 +95,13 @@
                                     <div class="row">
                                         <div class="col-lg-12 mb-3">
                                             <label  class="form-label">Isi</label>
-                                            <input id="isi" type="hidden" class="@error('isi')  is-invalid @enderror" name="isi">
-                                                <trix-editor class="trix-content" input="isi" style="min-height: 240px;">
-
+                                            <input id="isi" type="hidden" value="{{old('isi')}}" class="@error('isi')  is-invalid @enderror" name="isi">
+                                                <trix-editor class="trix-content" input="isi" style="min-height: 240px; 
+                                                @error('isi')   border-color: #dc3545; @enderror
+                                               
+                                                
+                                                ">
+                                                {{old('isi')}}
                                                 </trix-editor>
                                             @error('isi')
                                             <div class="invalid-feedback">

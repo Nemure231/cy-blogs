@@ -79,7 +79,14 @@
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Ubah</a></li>
-                                                <li><a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Hapus</a></li>
+                                                <li>
+                                                    <a class="dropdown-item tombol-hapus" href="javascript:void(0)"
+                                                    data-id="{{$p['id']}}"
+                                                    
+                                                    >
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </a>
+                                                </li>
                                               </ul>
                                         </div>
                                     </td>
@@ -100,6 +107,41 @@
         </div>
     </div>
 </main>
+
+
+{{-- MOdal Hapus --}}
+<div class="modal fade" id="modal-hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hapus post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex justify-content-center">
+                <div class="bg-danger w-25 rounded mt-5" style="min-height: 120px;">
+                    <i class="text-light fas fa-question position-absolute top-50 start-50 translate-middle fs-1"></i>
+                
+                </div>
+            </div>
+            
+
+            <div class="text-center mt-4 lead">
+                Yakin ingin menghapus post ini?
+            </div>      
+        </div>
+        <div class="modal-footer mt-3 justify-content-between">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <form action="/posting" method="post">
+                <input type="hidden" name="id-hapus" id="id-hapus">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Ya!</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 @section('js')
 <script type="application/javascript" src="{{asset('base/bootstrap/bootstrap.bundle.min.js');}}"></script>

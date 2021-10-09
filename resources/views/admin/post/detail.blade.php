@@ -49,9 +49,8 @@
                                         style="height: 400px; width: 1200px;">
 
                                     <article class="my-3 fs-5">
-                                        {{$detail['isi']}}
+                                        {!!htmlspecialchars_decode($detail['isi']) !!}
                                     </article>
-                                    
                                 </div>
                             </div>
                         </div>
