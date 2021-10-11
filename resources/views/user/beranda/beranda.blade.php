@@ -98,7 +98,7 @@
                 href="/?kategori={{$p['kategori']['slug']}}">{{$p['kategori']['nama']}}</a>
             </div>
             <a href="/post/{{$p['slug']}}">
-              <img src="{{$p['gambar']}}" class="card-img-top" alt="...">
+              <img src="{{asset('storage').'/'. $p['gambar']}}" class="card-img-top" alt="...">
             </a>
 
             <div class="card-body">

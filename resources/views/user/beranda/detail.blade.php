@@ -31,7 +31,7 @@
       </h4>Pada {{$detail['created_at']->diffForHumans()}}
       </p>
 
-      <img class="img-fluid" src="{{$detail['gambar']}}" class="card-img-top" alt="..."
+      <img class="img-fluid" src="{{asset('storage').'/'. $detail['gambar']}}" class="card-img-top" alt="..."
         style="height: 400px; width: 1200px;">
 
 

@@ -5,7 +5,7 @@ trix-toolbar [data-trix-button-group= "file-tools"]{
 /**
  * FilePond Custom Styles
  */
- .filepond--drop-label {
+ /* .filepond--drop-label {
 	color: #4c4e53;
 }
 
@@ -25,5 +25,5 @@ trix-toolbar [data-trix-button-group= "file-tools"]{
 
 .filepond--drip-blob {
 	background-color: #7f8a9a;
-}
+} */
 
