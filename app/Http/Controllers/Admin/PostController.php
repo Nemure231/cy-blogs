@@ -125,31 +125,43 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate([
             'kategori_id' => 'required',
-            'judul' => ['required', 'string', 'unique:post,judul,'.$id.',id'],
+            'judul' => ['required', 'unique:post,judul,'.$id.',id'],
             'isi' => ['required'],
+            'gambar' => ['file', 'max:1024', 'mimes:jpg,jpeg,png', 'mimetypes:image/jpg,image/jpeg,image/png'],
         ],[
             'kategori_id.required' => 'Harus diisi!',
             'judul.required' => 'Harus diisi!',
             'judul.unique' => 'Sudah pernah ada!',
             'isi.required' => 'Harus diisi!',
+            // 'gambar.required' => 'Harus diisi!',
+            'gambar.mimes'=> 'Harus berformat jpg, jpeg, dan png!',
+            'gambar.mimetype'=> 'Format tersebut disamarkan dengan ekstensi jpg, jpeg, dan png!!',
+            'gambar.max' => 'Ukuran tidak boleh lebih dari 1mb!' 
         ]);
 
-        // $isi_lama = Post::find($id)->get();
-
-        // $decode_isi = htmlspecialchars_decode($isi_lama['isi']);
-        
+        $gambar = $request->gambar;
         $post = Post::find($id);
         $post->kategori_id = $request->kategori_id;
         $post->judul = $request->judul;
         $post->isi = $request->isi;
-        $post->gambar = 'mmmmm';
+
+        if ($gambar) {
+            $gambar_lama = $request->input('gambar-lama');
+
+            if($gambar_lama){
+                Storage::delete($gambar_lama);
+            }
+
+            $nama_gambar = Storage::put('post', $gambar, 'public');
+            $post->gambar = $nama_gambar;
+        }
+
         $post->slug =  Str::slug($request->judul, '-');
         $post->status =  $request->status ?? 1;
         $post->save();
-        
         return redirect('/posting')->with('sukses', 'Post berhasil diubah!');
     }
 
@@ -161,6 +173,11 @@ class PostController extends Controller
      */
     public function destroy(Request $request)
     {
+        $gambar = $request->input('gambar-hapus');
+
+        if ($gambar) {
+            Storage::delete($gambar);
+        }
         Post::destroy($request->input('id-hapus'));
         return redirect('/posting')->with('sukses', 'Post berhasil dihapus!');
         

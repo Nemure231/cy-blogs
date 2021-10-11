@@ -48,7 +48,6 @@
                                     <th>Kategori</th>
                                     <th>Status</th>
                                     <th>Opsi</th>
-                                   
                                 </tr>
                             </thead>
                             
@@ -74,7 +73,6 @@
                                         <div class="btn-group dropdown">
                                             <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Opsi
-                                            
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
@@ -82,12 +80,12 @@
                                                 <li>
                                                     <a class="dropdown-item tombol-hapus" href="javascript:void(0)"
                                                     data-id="{{$p['id']}}"
-                                                    
+                                                    data-gambar="{{$p['gambar']}}"
                                                     >
                                                         <i class="fas fa-trash"></i> Hapus
                                                     </a>
                                                 </li>
-                                              </ul>
+                                            </ul>
                                         </div>
                                     </td>
                                 </tr>
@@ -134,6 +132,7 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
             <form action="/posting" method="post">
                 <input type="hidden" name="id-hapus" id="id-hapus">
+                <input type="hidden" name="gambar-hapus" id="gambar-hapus">
                 @method('delete')
                 @csrf
                 <button type="submit" class="btn btn-danger">Ya!</button>
