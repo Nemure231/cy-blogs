@@ -130,7 +130,7 @@
         </div>
         <div class="modal-footer mt-3 justify-content-between">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-            <form action="/posting" method="post">
+            <form action="{{url('posting')}}" method="post">
                 <input type="hidden" name="id-hapus" id="id-hapus">
                 <input type="hidden" name="gambar-hapus" id="gambar-hapus">
                 @method('delete')

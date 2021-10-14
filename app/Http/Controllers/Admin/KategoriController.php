@@ -39,6 +39,14 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => ['required', 'unique:kategori'],
+
+        ],[
+            'nama.required' => 'Harus diisi!',
+            'nama.unique' => 'Sudah pernah ada!'
+        ]);
+
         $kategori = new Kategori;
         $kategori->nama = $request->nama;
         $kategori->slug =  Str::slug($request->nama, '-');
@@ -65,7 +73,7 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -75,9 +83,23 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->input('ubah-id');
+        
+        $request->validate([
+            'ubah-nama' => ['required', 'unique:kategori,nama,'.$id.',id'],
+
+        ],[
+            'ubah-nama.required' => 'Harus diisi!',
+            'ubah-nama.unique' => 'Sudah pernah ada!'
+        ]);
+        $nama = $request->input('ubah-nama');
+        $kategori = Kategori::find($id);
+        $kategori->nama = $nama;
+        $kategori->slug =  Str::slug($nama, '-');
+        $kategori->save();
+        return redirect('/kategori')->with('sukses', 'Kategori berhasil diubah!');
     }
 
     /**
@@ -86,8 +108,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Kategori::destroy($request->input('id-hapus'));
+        return redirect('/kategori')->with('sukses', 'Kategori berhasil dihapus!');
     }
 }
