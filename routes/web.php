@@ -35,6 +35,7 @@ Route::post('/registrasi', [RegistrasiController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth'); 
 
 Route::get('/kategori', [KategoriController::class, 'index'])->middleware('auth'); 
+Route::post('/kategori', [KategoriController::class, 'store']); 
 
 Route::get('/posting', [PostController::class, 'index'])->middleware('auth'); 
 Route::get('/posting/pratinjau/{post:slug}', [PostController::class, 'show'])->middleware('auth');

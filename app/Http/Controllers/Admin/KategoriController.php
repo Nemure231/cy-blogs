@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use Illuminate\Support\Str;
 
 class KategoriController extends Controller
 {
@@ -38,7 +39,11 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kategori = new Kategori;
+        $kategori->nama = $request->nama;
+        $kategori->slug =  Str::slug($request->nama, '-');
+        $kategori->save();
+        return redirect('/kategori')->with('sukses', 'Kategori berhasil ditambahkan!');
     }
 
     /**
