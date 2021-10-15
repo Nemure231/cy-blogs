@@ -68,6 +68,7 @@
 <script src="{{asset('base/fontawesome/all.min.js');}}"></script>
 <script src="{{asset('admin/base/js/scripts.js')}}"></script>
 
+<script src="{{asset('admin/base/js/ganti-halaman.js')}}"></script>
 
     
 @endsection

@@ -3,9 +3,11 @@
 @section('judul', 'Cy-Blog - Kategori')
 
 @section('css')
+
 <link href="{{asset('base/datatables/style.css')}}" rel="stylesheet" />
 <link href="{{asset('base/izitoast/style.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
+{{-- <link href="{{asset('base/bootstrap/bootstrap.min.css')}}" rel="stylesheet" /> --}}
     
 @endsection
 
@@ -213,7 +215,8 @@
 <script src="{{asset('admin/base/js/scripts.js')}}"></script>
 
 <script type="application/javascript" src="{{asset('base/datatables/simple-datatables.js')}}"> </script>
-<script type="application/javascript" src="{{asset('admin/kategori/kategori.js')}}"> </script>
+<script  type="application/javascript" src="{{asset('admin/kategori/kategori.js')}}"> </script>
+<script  src="{{asset('admin/base/js/ganti-halaman.js')}}"></script>
     
 @endsection
     

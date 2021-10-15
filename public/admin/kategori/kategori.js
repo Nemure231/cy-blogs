@@ -9,6 +9,7 @@ function ready(fn) {
 
 ready(function () {
 
+
     const sukses = document.getElementById('sukses').dataset.flashdata;
     if (sukses) {
         iziToast.success({
@@ -27,6 +28,55 @@ ready(function () {
 
 
     /////////////////////Variabel/////////////////////////////
+
+    // function halaman(){
+
+    //     var tombolHapus = document.getElementsByClassName('pindah-halaman');
+    
+    //     Array.prototype.forEach.call(tombolHapus, function (element) {
+    //         element.addEventListener('click', function () {
+    //         var getUrl = window.location;
+    //         var baseUrl = getUrl.protocol + "///" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
+    //         var url = baseUrl + element.dataset.slug;
+    //         async function fetchMyDocument() { 
+
+    //             try {
+    //                 let response = await fetch(url); // Gets a promise
+    //                 document.body.innerHTML = await response.text(); // Replaces body with response
+    //                 window.history.pushState('', '', url);
+
+    //                 const datatablesSimple = document.getElementById('datatablesSimple');
+    //                 new simpleDatatables.DataTable(datatablesSimple);
+
+    //                 var load = document.getElementById('load-js');
+
+    //                 if (!load){
+    //                     var head= document.getElementsByTagName('head')[0];
+    //                     var script= document.createElement('script');
+    //                     script.src= '/admin/post/custom-post.js';
+    //                     script.id= 'load-js';
+    //                     head.appendChild(script);
+    //                 }else{
+    //                     var head= document.getElementsByTagName('head')[0];
+    //                     var script= document.createElement('script');
+    //                     script.src= '/admin/post/custom-post.js';
+    //                     script.id= 'load-js';
+    //                     load.parentNode.replaceChild(script, load);
+    //                 }
+
+
+
+    //             } catch (err) {
+    //                 console.log('Fetch error:' + err); // Error handling
+    //             }
+    //         }
+    //         fetchMyDocument()
+    //         });
+    //     });
+
+    // }
+    // halaman();
+
 
     function modalTambah() {
 

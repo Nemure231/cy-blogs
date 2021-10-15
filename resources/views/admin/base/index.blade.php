@@ -14,7 +14,6 @@
     <body class="sb-nav-fixed">
         @include('admin/base/navbar')
 
-
         <div id="layoutSidenav">
            @include('admin/base/sidebar')
             <div id="layoutSidenav_content">
@@ -26,6 +25,8 @@
         </div>
        
         @yield('js')
-        
+
+
+   
     </body>
 </html>

@@ -3,10 +3,12 @@
 @section('judul', 'Cy-Blog - Post')
 
 @section('css')
-
 <link href="{{asset('base/datatables/style.css')}}" rel="stylesheet" />
 <link href="{{asset('base/izitoast/style.min.css')}}" rel="stylesheet" />
 <link href="{{asset('admin/base/css/style.css')}}" rel="stylesheet" />
+
+{{-- <link href="{{asset('base/bootstrap/bootstrap.min.css')}}" rel="stylesheet" /> --}}
+
     
 @endsection
 
@@ -75,7 +77,14 @@
                                                 Opsi
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"><i class="fas fa-eye"></i> Lihat</a></li>
+                                                <li><a class="dropdown-item ganti-halaman" 
+
+                                                    href="javascript:void(0)"
+                                                    data-slug="{{$p['slug']}}"
+                                                    
+                                                    {{-- href="{{url('posting/pratinjau'). '/'. $p['slug'] }}" --}}
+                                                    
+                                                    ><i class="fas fa-eye"></i> Lihat</a></li>
                                                 <li><a class="dropdown-item" href="{{url('posting'). '/'. $p['id']. '/edit' }}"><i class="fas fa-edit"></i> Ubah</a></li>
                                                 <li>
                                                     <a class="dropdown-item tombol-hapus" href="javascript:void(0)"
@@ -149,8 +158,9 @@
 <script type="application/javascript" src="{{asset('admin/base/js/scripts.js')}}"></script>
 
 <script type="application/javascript" src="{{asset('base/datatables/simple-datatables.js')}}"> </script>
-<script type="application/javascript" src="{{asset('admin/post/custom-post.js')}}"> </script>
 
+<script  type="application/javascript" src="{{asset('admin/post/custom-post.js')}}"> </script>
+<script  src="{{asset('admin/base/js/ganti-halaman.js')}}"></script>
     
 @endsection
     
