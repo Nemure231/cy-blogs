@@ -72,6 +72,8 @@
                         <div class="small">Belum punya akun? <a href="{{url('registrasi')}}">Segera registrasi!</a>
                         </div>
                     </div>
+                    email: contoh@web.com
+                    pass: 12345678
                 </div>
             </div>
         </div>
