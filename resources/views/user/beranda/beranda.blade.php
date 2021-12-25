@@ -21,9 +21,6 @@
 @endsection
 
 
-
-
-
 @section('main')
 @include('user/base/header')
 <div id="sukses" data-flashdata="@if(session()->has('sukses')){{session('sukses')}}@endif"></div>
@@ -31,19 +28,10 @@
 
   <div class="row mb-2">
     <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 link-secondary" href="#">World</a>
-        <a class="p-2 link-secondary" href="#">U.S.</a>
-        <a class="p-2 link-secondary" href="#">Technology</a>
-        <a class="p-2 link-secondary" href="#">Design</a>
-        <a class="p-2 link-secondary" href="#">Culture</a>
-        <a class="p-2 link-secondary" href="#">Business</a>
-        <a class="p-2 link-secondary" href="#">Politics</a>
-        <a class="p-2 link-secondary" href="#">Opinion</a>
-        <a class="p-2 link-secondary" href="#">Science</a>
-        <a class="p-2 link-secondary" href="#">Health</a>
-        <a class="p-2 link-secondary" href="#">Style</a>
-        <a class="p-2 link-secondary" href="#">Travel</a>
+      <nav class="nav d-flex justify-content-start">
+        @foreach ($kategori as $k)
+          <a class="p-2 link-secondary" href="{{url('?kategori=').$k['slug'];}}">  {{$k['nama']}}</a>                       
+        @endforeach
       </nav>
     </div>
   </div>
@@ -53,9 +41,8 @@
       alt="...">
     <div class="card-img-overlay">
       <h1 class="card-title display-4 fst-italic">Welcome to my blog</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
-        about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+      <p class="lead my-3">Terima kasih sudah mampir!</p>
+      {{-- <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p> --}}
     </div>
   </div>
   {{-- <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">

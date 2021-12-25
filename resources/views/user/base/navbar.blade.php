@@ -49,12 +49,12 @@
                         </div><!-- end row -->
                     </div> <!-- dropdown-large.// -->
                 </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="{{url('dashboard')}}" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              </li> --}}
             </ul>
 
 
@@ -67,7 +67,7 @@
                     <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                    <li><a class="dropdown-item" href="#">Link</a></li>
+                    {{-- <li><a class="dropdown-item" href="#">Link</a></li> --}}
                     <li><a class="dropdown-item" href="{{url('/dashboard')}}">Dashboard</a></li>
                     <li>
                       <hr class="dropdown-divider">
