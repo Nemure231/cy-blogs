@@ -47,7 +47,3 @@ Route::get('/posting/{post:id}/edit', [PostController::class, 'edit']);
 Route::put('/posting/{post:id}', [PostController::class, 'update']);
 Route::delete('/posting', [PostController::class, 'destroy']);
 
-
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-});
