@@ -88,29 +88,29 @@ ready(function () {
   
 
 
-    function halamanPratinjau(){
+    // function halamanPratinjau(){
 
-        var tombolHapus = document.getElementsByClassName('ganti-halaman');
+    //     var tombolHapus = document.getElementsByClassName('ganti-halaman');
     
-        Array.prototype.forEach.call(tombolHapus, function (element) {
-            element.addEventListener('click', function () {
-            var getUrl = window.location;
-            var baseUrl = getUrl.protocol + "///" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-            var url = baseUrl + "/pratinjau/" + element.dataset.slug;
+    //     Array.prototype.forEach.call(tombolHapus, function (element) {
+    //         element.addEventListener('click', function () {
+    //         var getUrl = window.location;
+    //         var baseUrl = getUrl.protocol + "///" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    //         var url = baseUrl + "/pratinjau/" + element.dataset.slug;
                 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                }).then(function(body) {
-                    document.body.innerHTML = body       
-                    window.history.pushState('', '', url);             
+    //         fetch(url)
+    //             .then(function(response) {
+    //                 return response.text();
+    //             }).then(function(body) {
+    //                 document.body.innerHTML = body       
+    //                 window.history.pushState('', '', url);             
                     
-                });
-            });
-        });
+    //             });
+    //         });
+    //     });
 
-    }
-    halamanPratinjau();
+    // }
+    // halamanPratinjau();
 
 
     /////////////////////Modal Hapus/////////////////////////////

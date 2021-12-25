@@ -79,10 +79,10 @@
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item ganti-halaman" 
 
-                                                    href="javascript:void(0)"
+                                                    {{-- href="javascript:void(0)" --}}
                                                     data-slug="{{$p['slug']}}"
                                                     
-                                                    {{-- href="{{url('posting/pratinjau'). '/'. $p['slug'] }}" --}}
+                                                    href="{{url('posting/pratinjau'). '/'. $p['slug'] }}"
                                                     
                                                     ><i class="fas fa-eye"></i> Lihat</a></li>
                                                 <li><a class="dropdown-item" href="{{url('posting'). '/'. $p['id']. '/edit' }}"><i class="fas fa-edit"></i> Ubah</a></li>
@@ -160,7 +160,7 @@
 <script type="application/javascript" src="{{asset('base/datatables/simple-datatables.js')}}"> </script>
 
 <script  type="application/javascript" src="{{asset('admin/post/custom-post.js')}}"> </script>
-<script  src="{{asset('admin/base/js/ganti-halaman.js')}}"></script>
+{{-- <script  src="{{asset('admin/base/js/ganti-halaman.js')}}"></script> --}}
     
 @endsection
     

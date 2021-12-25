@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                <a class="small" href="password.html">Lupa sandi?</a>
+                                {{-- <a class="small" href="password.html">Lupa sandi?</a> --}}
                                 <button type="submit" class="btn btn-primary">Login</a>
                             </div>
                         </form>

@@ -55,7 +55,7 @@ class RegistrasiController extends Controller
         //tai ingat ini hanya berlau jika name dan databasenya sama misal nama dengan nama, tidak name dengan nama
         // $tervalidasi['sandi'] = Hash::make($tervalidasi['sandi']);
         // User::create($tervalidasi);
-        return redirect('/login')->with('sukses', 'Registrasi berhasil! Silakan periksa surel Anda untuk melakukan aktifasi.');
+        return redirect('/login')->with('sukses', 'Registrasi berhasil! Silakan login.');
 
     }
 
