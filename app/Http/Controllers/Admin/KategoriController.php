@@ -102,12 +102,7 @@ class KategoriController extends Controller
         return redirect('/kategori')->with('sukses', 'Kategori berhasil diubah!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy(Request $request)
     {
         Kategori::destroy($request->input('id-hapus'));
