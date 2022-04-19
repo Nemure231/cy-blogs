@@ -56,11 +56,11 @@
                                     </label>
                                 </div>
 
-                                <div class="form-check mb-3">
+                                {{-- <div class="form-check mb-3">
                                     <input class="form-check-input" id="inputRememberPassword" type="checkbox"
                                         value="" />
                                     <label class="form-check-label" for="inputRememberPassword">Ingat sandi</label>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                 {{-- <a class="small" href="password.html">Lupa sandi?</a> --}}
@@ -68,10 +68,10 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer text-center py-3">
+                    {{-- <div class="card-footer text-center py-3">
                         <div class="small">Belum punya akun? <a href="{{url('registrasi')}}">Segera registrasi!</a>
                         </div>
-                    </div>
+                    </div> --}}
                     email: contoh@web.com
                     pass: 12345678
                 </div>
