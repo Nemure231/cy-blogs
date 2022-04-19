@@ -38,13 +38,7 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->withErrors(
-        //     [
-        //     'email.required' => 'Harus diisi!',
-        //     'sandi.email' => 'Harus berformat surel!',
-        //     'sandi.required' => 'Harus diisi!'
-        // ]
-        );
+        return back()->with('loginError', 'Gagal login! Periksa kembali email dan sandi Anda.');
 
 
     }
