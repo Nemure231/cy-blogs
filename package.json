@@ -16,6 +16,6 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "fetch-css": "^3.1.12"
+        "fetch-css": "^3.1.0"
     }
 }

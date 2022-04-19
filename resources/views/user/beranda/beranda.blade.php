@@ -93,8 +93,7 @@
                 <h5 class="card-title text-dark">{{$p['judul']}}</h5>
               </a>
               <small class="text-secondary">{{$p['created_at']->diffForHumans()}}</small>
-              <p class="card-text mt-2">This is a longer card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.</p>
+              <p class="card-text mt-2">{!!$p['isi']!!}</p>
             </div>
           </div>
         </div>
