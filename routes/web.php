@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\BerandaController;
 
@@ -47,3 +47,6 @@ Route::get('/posting/{post:id}/edit', [PostController::class, 'edit']);
 Route::put('/posting/{post:id}', [PostController::class, 'update']);
 Route::delete('/posting', [PostController::class, 'destroy']);
 
+Route::get('/stolink', function () {
+    Artisan::call('storage:link');
+});
