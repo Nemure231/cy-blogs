@@ -48,5 +48,5 @@ Route::put('/posting/{post:id}', [PostController::class, 'update']);
 Route::delete('/posting', [PostController::class, 'destroy']);
 
 Route::get('/stolink', function () {
-    Artisan::call('storage:link');
+    return Artisan::call('storage:link');
 });
