@@ -69,7 +69,6 @@
     @endif
     
   @else
-
     <h2 class="text-center mt-5">Tidak ada post yang anda cari</h2>
 
   @endif
